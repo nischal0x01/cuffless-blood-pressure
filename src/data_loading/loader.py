@@ -52,10 +52,12 @@ download_files(vital_urls, "PulseDB_Vital")
 
 def merge_and_unzip(prefix, total_parts):
     zip_file = f"{prefix}.zip"
+    
     # Merge parts
     cat_command = "cat " + " ".join([f"{prefix}.zip.{str(i).zfill(3)}" for i in range(1, total_parts+1)]) + f" > {zip_file}"
     print(f"Merging into {zip_file} ...")
     subprocess.run(cat_command, shell=True)
+
     # Unzip
     print(f"Extracting {zip_file} ...")
     subprocess.run(f"unzip -o {zip_file}", shell=True)

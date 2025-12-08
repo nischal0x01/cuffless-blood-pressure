@@ -1,10 +1,11 @@
 import os
+import subprocess
+from pathlib import Path
 
-# Create download directory
-os.makedirs("../data/raw/PulseDB", exist_ok=True)
-os.chdir("../data/raw/PulseDB")
+base_dir = Path("../../data/raw")
+base_dir.mkdir(exist_ok=True)
+os.chdir(base_dir)
 
-# URLs for PulseDB MIMIC parts
 mimic_urls = [
     # "https://rutgers.box.com/shared/static/7l8n3tn9tr0602tdss1x7e3uliahlibp.001",
     # "https://rutgers.box.com/shared/static/zco48rvz5dog72970679foen6hct15c8.002",
@@ -24,7 +25,6 @@ mimic_urls = [
     "https://rutgers.box.com/shared/static/wmzndowgfa5xi3tvtqahxkld3ngdyjds.016"
 ]
 
-# URLs for PulseDB Vital parts
 vital_urls = [
     # "https://rutgers.box.com/shared/static/vtxoksmn7emeaxypb2prywgwscuefoqa.001",
     # "https://rutgers.box.com/shared/static/euzkek7c3xoy62jisheuxqar7z5y8xig.002",
@@ -41,13 +41,26 @@ vital_urls = [
 def download_files(urls, prefix):
     for i, url in enumerate(urls, 1):
         filename = f"{prefix}.zip.{str(i).zfill(3)}"
-        print(f"Downloading {filename} ...")
-        os.system(f"curl -L -o {filename} -C - {url}")
+        if not Path(filename).exists():
+            print(f"Downloading {filename} ...")
+            subprocess.run(f"curl -L -o {filename} -C - {url}", shell=True)
+        else:
+            print(f"{filename} already exists, skipping.")
 
-# Download MIMIC parts
 download_files(mimic_urls, "PulseDB_MIMIC")
-
-# Download Vital parts
 download_files(vital_urls, "PulseDB_Vital")
 
-print("All downloads started! Check files in PulseDB folder.")
+def merge_and_unzip(prefix, total_parts):
+    zip_file = f"{prefix}.zip"
+    # Merge parts
+    cat_command = "cat " + " ".join([f"{prefix}.zip.{str(i).zfill(3)}" for i in range(1, total_parts+1)]) + f" > {zip_file}"
+    print(f"Merging into {zip_file} ...")
+    subprocess.run(cat_command, shell=True)
+    # Unzip
+    print(f"Extracting {zip_file} ...")
+    subprocess.run(f"unzip -o {zip_file}", shell=True)
+
+merge_and_unzip("PulseDB_MIMIC", len(mimic_urls))
+merge_and_unzip("PulseDB_Vital", len(vital_urls))
+
+print("All PulseDB parts downloaded, merged, and extracted successfully!")

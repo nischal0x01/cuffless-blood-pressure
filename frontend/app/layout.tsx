@@ -2,16 +2,20 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" })
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
-  title: "Real-time Signal Monitor | Physiological Data Visualization",
+  title: "PulseAI | Cuffless Blood Pressure Monitoring",
   description:
-    "Real-time PPG and ECG waveform visualization for cuffless blood pressure monitoring with ESP32 integration",
-  generator: "v0.app",
+    "Advanced cuffless blood pressure monitoring using PPG and ECG signals through machine learning. Real-time non-invasive blood pressure estimation.",
+  generator: "Next.js",
+  keywords: ["blood pressure", "PPG", "ECG", "health monitoring", "machine learning", "cuffless BP"],
+  authors: [{ name: "PulseAI Team" }],
   icons: {
     icon: [
       {
@@ -37,9 +41,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased`}>
-        {children}
+    <html lang="en" className="scroll-smooth">
+      <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
+        <Navbar />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
         <Analytics />
       </body>
     </html>

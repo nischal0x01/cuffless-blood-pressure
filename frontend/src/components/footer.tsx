@@ -23,12 +23,12 @@ export function Footer() {
             onClick={handleHomeClick}
             className="flex items-center gap-0 text-2xl font-extrabold transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer font-display"
           >
-            <span className="bg-gradient-to-r from-emerald-500 via-green-500 to-teal-600 bg-clip-text text-transparent">
-              Pulse
-            </span>
-            <span className="bg-gradient-to-r from-emerald-500 via-green-500 to-teal-600 bg-clip-text text-transparent">
-              AI
-            </span>
+            <h1 className="text-3xl md:text-2xl lg:text-3xl font-extrabold font-display tracking-tighter">
+              <span className="bg-gradient-to-r from-black via-green-700 to-green-700 bg-clip-text text-transparent">Pulse</span>
+              <span className="bg-gradient-to-r from-green-700 via-green-700 to-black bg-clip-text text-transparent ml-2">
+                AI
+              </span>
+            </h1>
           </a>
 
           {/* GitHub Link */}
@@ -36,7 +36,7 @@ export function Footer() {
             href="https://github.com/nischal0x01/pulseAI"
             target="_blank"
             rel="noopener noreferrer"
-            className="group p-3 rounded-xl bg-muted/50 hover:bg-primary/10 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover:rotate-6 hover:shadow-lg hover:shadow-primary/20"
+            className="item-center item-justify-center group p-3 rounded-xl bg-muted/50 hover:bg-primary/10 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover:rotate-6 hover:shadow-lg hover:shadow-primary/20"
             aria-label="GitHub Repository"
           >
             <Github className="h-6 w-6 transition-transform duration-300 group-hover:rotate-12" />

@@ -18,23 +18,50 @@ function MonitorDashboard() {
       {/* Home Section */}
       <section id="home" className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl space-y-10">
-          {/* Header with animations */}
-          <div className="text-center space-y-6 mb-12 animate-fade-in-up">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold from-primary via-purple-600 to-pink-600 font-display">
-              <span className="inline-block title-gradient">
-                Pulse
-              </span>
-              <span className="inline-block ml-2 title-gradient">
+          
+          {/* Header with Modified Branding */}
+          <div className="text-center space-y-6 mb-4 animate-fade-in-up">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold font-display tracking-tighter">
+              <span className="bg-gradient-to-r from-black via-green-700 to-green-700 bg-clip-text text-transparent pr-2">Pulse</span>
+              <span className="bg-gradient-to-r from-green-700 via-green-700 to-black bg-clip-text text-transparent ml-2">
                 AI
               </span>
             </h1>
             <p className="text-2xl md:text-2xl text-muted-foreground max-w-4xl mx-auto font-medium leading-relaxed font-ui">
               Real-time cuffless blood pressure monitoring using PPG and ECG signals
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground/80 max-w-3xl mx-auto font-ui">
-              Advanced machine learning for continuous, non-invasive blood pressure estimation
-            </p>
           </div>
+
+          {/* --- CENTERED ANIMATED ECG PATTERN --- */}
+          <div className="flex justify-center items-center h-24 w-full overflow-hidden relative">
+            <svg width="400" height="100" viewBox="0 0 400 100" className="drop-shadow-[0_0_8px_rgba(220,38,38,0.5)]">
+              <path
+                d="M0,50 L150,50 L160,30 L175,70 L190,50 L210,50 L220,10 L235,90 L250,50 L400,50"
+                fill="none"
+                stroke="#dc2626"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="ecg-line"
+              />
+            </svg>
+            <style jsx>{`
+              .ecg-line {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: draw 3s linear infinite;
+              }
+              @keyframes draw {
+                to {
+                  stroke-dashoffset: 0;
+                }
+              }
+            `}</style>
+          </div>
+
+          <p className="text-lg md:text-xl text-muted-foreground/80 text-center max-w-3xl mx-auto font-ui">
+            Advanced machine learning for continuous, non-invasive blood pressure estimation
+          </p>
 
           {/* Connection Status */}
           <div className="rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 animate-fade-in-up">
@@ -56,11 +83,11 @@ function MonitorDashboard() {
                     <h2 className="text-xl font-bold font-display">PPG Signal</h2>
                     <p className="text-sm text-muted-foreground mt-1">Photoplethysmography • 250Hz sampling rate</p>
                   </div>
-                  <div className="status-dot ppg animate-pulse" />
+                  <div className="h-3 w-3 rounded-full bg-red-600 animate-pulse" />
                 </div>
               </div>
               <div className="h-72 p-6">
-                <SignalChart buffer={ppgBuffer} color="hsl(0, 84%, 60%)" label="PPG" yMin={-2} yMax={2} />
+                <SignalChart buffer={ppgBuffer} color="#dc2626" label="PPG" yMin={-2} yMax={2} />
               </div>
             </div>
 
@@ -72,11 +99,11 @@ function MonitorDashboard() {
                     <h2 className="text-xl font-bold font-display">ECG Signal</h2>
                     <p className="text-sm text-muted-foreground mt-1">Electrocardiogram • 500Hz sampling rate</p>
                   </div>
-                  <div className="status-dot ecg animate-pulse" />
+                  <div className="h-3 w-3 rounded-full bg-blue-600 animate-pulse" />
                 </div>
               </div>
               <div className="h-72 p-6">
-                <SignalChart buffer={ecgBuffer} color="hsl(217, 91%, 60%)" label="ECG" yMin={-3} yMax={3} />
+                <SignalChart buffer={ecgBuffer} color="#2563eb" label="ECG" yMin={-3} yMax={3} />
               </div>
             </div>
           </div>

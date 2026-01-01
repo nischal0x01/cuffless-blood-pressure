@@ -55,12 +55,12 @@ export function Navbar() {
             onClick={(e) => handleNavClick(e, "#home")}
             className="flex items-center gap-0 text-3xl font-extrabold transition-all duration-300 hover:scale-110 active:scale-95 font-display"
           >
-            <span className="bg-gradient-to-r from-emerald-500 via-green-500 to-teal-600 bg-clip-text text-transparent animate-pulse-glow">
-              Pulse
-            </span>
-            <span className="bg-gradient-to-r from-emerald-500 via-green-500 to-teal-600 bg-clip-text text-transparent">
-              AI
-            </span>
+            <h1 className="text-3xl md:text-2xl lg:text-3xl font-extrabold font-display tracking-tighter">
+              <span className="bg-gradient-to-r from-black via-green-700 to-green-700 bg-clip-text text-transparent">Pulse</span>
+              <span className="bg-gradient-to-r from-green-700 via-green-700 to-black bg-clip-text text-transparent ml-2">
+                AI
+              </span>
+            </h1>
           </a>
 
           {/* Desktop Navigation */}

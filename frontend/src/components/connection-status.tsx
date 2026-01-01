@@ -10,29 +10,29 @@ export function ConnectionStatus() {
     connecting: {
       icon: Loader2,
       label: "Connecting",
-      color: "text-yellow-500",
-      bgColor: "bg-yellow-500/10",
+      pillClass: "status-pill connecting",
+      iconClass: "status-warning",
       animate: "animate-spin",
     },
     connected: {
       icon: Activity,
       label: "Connected",
-      color: "text-emerald-500",
-      bgColor: "bg-emerald-500/10",
+      pillClass: "status-pill connected",
+      iconClass: "status-ok",
       animate: "animate-pulse",
     },
     disconnected: {
       icon: WifiOff,
       label: "Disconnected",
-      color: "text-muted-foreground",
-      bgColor: "bg-muted",
+      pillClass: "status-pill",
+      iconClass: "text-muted-foreground",
       animate: "",
     },
     error: {
       icon: AlertCircle,
       label: "Error",
-      color: "text-red-500",
-      bgColor: "bg-red-500/10",
+      pillClass: "status-pill error",
+      iconClass: "status-error",
       animate: "",
     },
   }
@@ -43,9 +43,9 @@ export function ConnectionStatus() {
   return (
     <div className="flex items-center justify-between gap-4">
       <div className="flex items-center gap-3">
-        <div className={`flex items-center gap-2 rounded-lg px-3 py-1.5 ${config.bgColor}`}>
-          <Icon className={`h-4 w-4 ${config.color} ${config.animate}`} />
-          <span className={`text-sm font-medium ${config.color}`}>{config.label}</span>
+        <div className={`flex items-center gap-2 ${config.pillClass}`}>
+          <Icon className={`h-4 w-4 ${config.iconClass} ${config.animate}`} />
+          <span className={`text-sm font-medium ${config.iconClass}`}>{config.label}</span>
         </div>
 
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -56,7 +56,7 @@ export function ConnectionStatus() {
 
       {connectionStatus === "connected" && currentHeartRate > 0 && (
         <div className="flex items-center gap-2">
-          <Activity className="h-4 w-4 text-emerald-500" />
+          <Activity className="h-4 w-4 status-ok" />
           <span className="text-lg font-semibold tabular-nums">{currentHeartRate}</span>
           <span className="text-sm text-muted-foreground">BPM</span>
         </div>

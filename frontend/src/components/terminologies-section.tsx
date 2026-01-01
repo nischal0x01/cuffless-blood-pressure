@@ -84,16 +84,10 @@ export function TerminologiesSection() {
     <section id="terminologies" className="py-24 bg-gradient-to-b from-background via-muted/20 to-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent"
-            style={{ fontFamily: "var(--font-poppins)" }}
-          >
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent font-display">
             Terminologies
           </h2>
-          <p 
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-medium"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-medium font-ui">
             Understanding the key concepts and technologies behind PulseAI
           </p>
         </div>
@@ -111,17 +105,14 @@ export function TerminologiesSection() {
                   <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-purple-500/20 text-primary shadow-lg shadow-primary/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     <term.icon className="h-6 w-6" />
                   </div>
-                  <CardTitle 
-                    className="text-2xl font-extrabold"
-                    style={{ fontFamily: "var(--font-poppins)" }}
-                  >
+                  <CardTitle className="text-2xl font-extrabold font-display">
                     {term.title}
-                  </CardTitle>
+                  </CardTitle> 
                 </div>
                 <CardDescription className="text-lg font-medium">{term.description}</CardDescription>
               </CardHeader>
               <CardContent className="relative z-10">
-                <ul className="space-y-3 text-base text-muted-foreground" style={{ fontFamily: "var(--font-inter)" }}>
+                <ul className="space-y-3 text-base text-muted-foreground font-ui">
                   {term.details.map((detail, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-primary mt-2 text-lg font-bold">•</span>
@@ -139,10 +130,7 @@ export function TerminologiesSection() {
           <Card className="relative overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-card via-card to-primary/5 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-pink-500/5" />
             <CardHeader className="relative z-10 pb-6">
-              <CardTitle 
-                className="text-3xl md:text-4xl font-extrabold flex items-center gap-4"
-                style={{ fontFamily: "var(--font-poppins)" }}
-              >
+              <CardTitle className="text-3xl md:text-4xl font-extrabold flex items-center gap-4 font-display">
                 <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-purple-500/20 shadow-lg shadow-primary/20">
                   <Zap className="h-8 w-8 text-primary" />
                 </div>
@@ -157,19 +145,13 @@ export function TerminologiesSection() {
                     1
                   </div>
                   <div>
-                    <h4 
-                      className="font-extrabold text-foreground mb-3 text-2xl"
-                      style={{ fontFamily: "var(--font-poppins)" }}
-                    >
+                    <h4 className="font-extrabold text-foreground mb-3 text-2xl font-display">
                       Signal Acquisition
                     </h4>
-                    <p 
-                      className="leading-relaxed text-lg font-medium text-muted-foreground"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
+                    <p className="leading-relaxed text-lg font-medium text-muted-foreground font-ui">
                       PulseAI collects real-time PPG and ECG signals from sensors. These signals capture
                       cardiovascular activity and blood volume changes in the body.
-                    </p>
+                    </p> 
                   </div>
                 </div>
                 <div className="flex gap-6 group">
@@ -177,16 +159,10 @@ export function TerminologiesSection() {
                     2
                   </div>
                   <div>
-                    <h4 
-                      className="font-extrabold text-foreground mb-3 text-2xl"
-                      style={{ fontFamily: "var(--font-poppins)" }}
-                    >
+                    <h4 className="font-extrabold text-foreground mb-3 text-2xl font-display">
                       Signal Processing
                     </h4>
-                    <p 
-                      className="leading-relaxed text-lg font-medium text-muted-foreground"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
+                    <p className="leading-relaxed text-lg font-medium text-muted-foreground font-ui">
                       Raw signals are filtered and processed to remove noise and artifacts. Key features
                       such as pulse rate, R-R intervals, and waveform characteristics are extracted.
                     </p>
@@ -197,16 +173,10 @@ export function TerminologiesSection() {
                     3
                   </div>
                   <div>
-                    <h4 
-                      className="font-extrabold text-foreground mb-3 text-2xl"
-                      style={{ fontFamily: "var(--font-poppins)" }}
-                    >
+                    <h4 className="font-extrabold text-foreground mb-3 text-2xl font-display">
                       Feature Extraction
                     </h4>
-                    <p 
-                      className="leading-relaxed text-lg font-medium text-muted-foreground"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
+                    <p className="leading-relaxed text-lg font-medium text-muted-foreground font-ui">
                       Advanced algorithms analyze the processed signals to identify patterns and extract
                       features that correlate with blood pressure measurements.
                     </p>
@@ -217,16 +187,10 @@ export function TerminologiesSection() {
                     4
                   </div>
                   <div>
-                    <h4 
-                      className="font-extrabold text-foreground mb-3 text-2xl"
-                      style={{ fontFamily: "var(--font-poppins)" }}
-                    >
+                    <h4 className="font-extrabold text-foreground mb-3 text-2xl font-display">
                       Machine Learning Prediction
                     </h4>
-                    <p 
-                      className="leading-relaxed text-lg font-medium text-muted-foreground"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
+                    <p className="leading-relaxed text-lg font-medium text-muted-foreground font-ui">
                       Deep learning models trained on extensive datasets map the extracted features to
                       systolic and diastolic blood pressure values, providing accurate estimates in real-time.
                     </p>
@@ -237,16 +201,10 @@ export function TerminologiesSection() {
                     5
                   </div>
                   <div>
-                    <h4 
-                      className="font-extrabold text-foreground mb-3 text-2xl"
-                      style={{ fontFamily: "var(--font-poppins)" }}
-                    >
+                    <h4 className="font-extrabold text-foreground mb-3 text-2xl font-display">
                       Display & Monitoring
                     </h4>
-                    <p 
-                      className="leading-relaxed text-lg font-medium text-muted-foreground"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
+                    <p className="leading-relaxed text-lg font-medium text-muted-foreground font-ui">
                       The estimated blood pressure values are displayed in real-time, allowing for continuous
                       monitoring without the need for periodic cuff measurements.
                     </p>

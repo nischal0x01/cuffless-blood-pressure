@@ -20,27 +20,18 @@ function MonitorDashboard() {
         <div className="mx-auto max-w-7xl space-y-10">
           {/* Header with animations */}
           <div className="text-center space-y-6 mb-12 animate-fade-in-up">
-            <h1 
-              className="text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-tight"
-              style={{ fontFamily: "var(--font-poppins)" }}
-            >
-              <span className="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent" style={{ animation: "gradient-x 3s ease infinite" }}>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-tight font-display">
+              <span className="inline-block title-gradient">
                 Pulse
               </span>
-              <span className="inline-block ml-2 bg-gradient-to-r from-pink-600 via-red-500 to-orange-500 bg-clip-text text-transparent">
+              <span className="inline-block ml-2 title-gradient">
                 AI
               </span>
             </h1>
-            <p 
-              className="text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto font-medium leading-relaxed"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <p className="text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto font-medium leading-relaxed font-ui">
               Real-time cuffless blood pressure monitoring using PPG and ECG signals
             </p>
-            <p 
-              className="text-lg md:text-xl text-muted-foreground/80 max-w-3xl mx-auto"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <p className="text-lg md:text-xl text-muted-foreground/80 max-w-3xl mx-auto font-ui">
               Advanced machine learning for continuous, non-invasive blood pressure estimation
             </p>
           </div>
@@ -51,7 +42,7 @@ function MonitorDashboard() {
           </div>
 
           {/* Metrics */}
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div className="animate-fade-in-up delay-200">
             <SignalMetrics />
           </div>
 
@@ -62,10 +53,10 @@ function MonitorDashboard() {
               <div className="border-b border-border/50 bg-gradient-to-r from-muted/50 to-muted/30 px-6 py-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-xl font-bold" style={{ fontFamily: "var(--font-poppins)" }}>PPG Signal</h2>
+                    <h2 className="text-xl font-bold font-display">PPG Signal</h2>
                     <p className="text-sm text-muted-foreground mt-1">Photoplethysmography • 250Hz sampling rate</p>
                   </div>
-                  <div className="h-3 w-3 rounded-full bg-red-500 animate-pulse shadow-lg shadow-red-500/50" />
+                  <div className="status-dot ppg animate-pulse" />
                 </div>
               </div>
               <div className="h-72 p-6">
@@ -78,10 +69,10 @@ function MonitorDashboard() {
               <div className="border-b border-border/50 bg-gradient-to-r from-muted/50 to-muted/30 px-6 py-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-xl font-bold" style={{ fontFamily: "var(--font-poppins)" }}>ECG Signal</h2>
+                    <h2 className="text-xl font-bold font-display">ECG Signal</h2>
                     <p className="text-sm text-muted-foreground mt-1">Electrocardiogram • 500Hz sampling rate</p>
                   </div>
-                  <div className="h-3 w-3 rounded-full bg-blue-500 animate-pulse shadow-lg shadow-blue-500/50" />
+                  <div className="status-dot ecg animate-pulse" />
                 </div>
               </div>
               <div className="h-72 p-6">
@@ -91,7 +82,7 @@ function MonitorDashboard() {
           </div>
 
           {/* Controls */}
-          <div className="rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <div className="rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 animate-fade-in-up delay-400">
             <SignalControls />
           </div>
         </div>

@@ -21,8 +21,7 @@ export function Footer() {
           <a
             href="#home"
             onClick={handleHomeClick}
-            className="flex items-center gap-0 text-2xl font-extrabold transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
-            style={{ fontFamily: "var(--font-poppins)" }}
+            className="flex items-center gap-0 text-2xl font-extrabold transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer font-display"
           >
             <span className="bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-600 bg-clip-text text-transparent">
               Pulse

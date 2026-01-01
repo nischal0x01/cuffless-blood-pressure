@@ -4,7 +4,7 @@ Place team member photos in this directory with the following naming convention:
 
 ## Expected Filenames:
 
-- `rabindra-bista-phd.jpg` - Supervisor
+- `rabindra-bista.jpg` - Supervisor
 - `suvesh-gurung.jpg` - Team Member
 - `pramisha-sapkota.jpg` - Team Member
 - `nischal-subedi.jpg` - Team Member

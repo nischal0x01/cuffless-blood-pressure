@@ -53,8 +53,7 @@ export function Navbar() {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, "#home")}
-            className="flex items-center gap-0 text-3xl font-extrabold transition-all duration-300 hover:scale-110 active:scale-95"
-            style={{ fontFamily: "var(--font-poppins)" }}
+            className="flex items-center gap-0 text-3xl font-extrabold transition-all duration-300 hover:scale-110 active:scale-95 font-display"
           >
             <span className="bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-600 bg-clip-text text-transparent animate-pulse-glow">
               Pulse
@@ -71,8 +70,7 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="relative px-5 py-2.5 text-base font-semibold text-muted-foreground hover:text-foreground rounded-lg transition-all duration-300 hover:bg-primary/10 hover:scale-105 group"
-                style={{ fontFamily: "var(--font-poppins)" }}
+                className="relative px-5 py-2.5 text-base font-semibold text-muted-foreground hover:text-foreground rounded-lg transition-all duration-300 hover:bg-primary/10 hover:scale-105 group font-display"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 transition-all duration-300 group-hover:w-full" />
@@ -102,8 +100,7 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="block px-4 py-3 text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-all duration-200"
-                style={{ fontFamily: "var(--font-poppins)" }}
+                className="block px-4 py-3 text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-all duration-200 font-display"
               >
                 {item.name}
               </a>

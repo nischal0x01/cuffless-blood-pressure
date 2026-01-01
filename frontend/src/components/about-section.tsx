@@ -34,7 +34,7 @@ const getImagePath = (name: string): string => {
 const teamMembers: TeamMember[] = [
   {
     name: "Suvesh Gurung",
-    role: "Team Member",
+    role: "IoT | Embedded Systems",
     linkedin: "https://www.linkedin.com/in/suvesh-gurung-471998294/",
     github: "https://github.com/suveshgurung",
     initials: "SG",
@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Pramisha Sapkota",
-    role: "Team Member",
+    role: "IoT | Embedded Systems",
     linkedin: "https://www.linkedin.com/in/pramisha-sapkota-b4549629a/",
     github: "https://github.com/pramisha56",
     initials: "PS",
@@ -50,7 +50,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Nischal Subedi",
-    role: "Team Member",
+    role: "FullStack | ML",
     linkedin: "https://linkedin.com/in/nischal0x01",
     github: "https://github.com/nischal0x01",
     initials: "NS",
@@ -58,7 +58,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Arwin Shrestha",
-    role: "Team Member",
+    role:"FullStack | ML",
     linkedin: "https://www.linkedin.com/in/arwin-shrestha-7532463a1/",
     github: "https://github.com/sthaarwin",
     initials: "AS",
@@ -80,16 +80,10 @@ export function AboutSection() {
     <section id="about" className="py-24 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 animate-fade-in-up">
-          <h2 
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent"
-            style={{ fontFamily: "var(--font-poppins)" }}
-          >
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent font-display">
             About Us
           </h2>
-          <p 
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-medium"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-medium font-ui">
             PulseAI is a research project focused on developing non-invasive blood pressure monitoring
             using advanced signal processing and machine learning techniques.
           </p>
@@ -97,10 +91,7 @@ export function AboutSection() {
 
         {/* Supervisor */}
         <div className="mb-20 animate-fade-in-up">
-          <h3 
-            className="text-3xl md:text-4xl font-extrabold mb-12 text-center text-foreground/90"
-            style={{ fontFamily: "var(--font-poppins)" }}
-          >
+          <h3 className="text-3xl md:text-4xl font-extrabold mb-12 text-center text-foreground/90 font-display">
             Supervisor
           </h3>
           <div className="flex justify-center">
@@ -110,10 +101,7 @@ export function AboutSection() {
 
         {/* Team Members */}
         <div id="team" className="animate-fade-in-up">
-          <h3 
-            className="text-3xl md:text-4xl font-extrabold mb-12 text-center text-foreground/90"
-            style={{ fontFamily: "var(--font-poppins)" }}
-          >
+          <h3 className="text-3xl md:text-4xl font-extrabold mb-12 text-center text-foreground/90 font-display">
             Team Members
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -137,18 +125,15 @@ function SupervisorCard({ member }: { member: TeamMember }) {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-purple-500/30 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500 animate-pulse" />
             <Avatar className="h-36 w-36 relative border-4 border-primary/20 shadow-2xl shadow-primary/20 group-hover:border-primary/40 transition-all duration-500">
               <AvatarImage src={member.image} alt={member.name} />
-              <AvatarFallback className="text-3xl font-extrabold bg-gradient-to-br from-primary to-purple-600 text-white" style={{ fontFamily: "var(--font-poppins)" }}>
+              <AvatarFallback className="text-3xl font-extrabold bg-gradient-to-br from-primary to-purple-600 text-white font-display">
                 {member.initials}
-              </AvatarFallback>
+              </AvatarFallback> 
             </Avatar>
           </div>
         </div>
-        <CardTitle 
-          className="text-3xl mb-3 font-extrabold"
-          style={{ fontFamily: "var(--font-poppins)" }}
-        >
+        <CardTitle className="text-3xl mb-3 font-extrabold font-display">
           {member.name}
-        </CardTitle>
+        </CardTitle> 
         <CardDescription className="text-xl font-semibold">{member.role}</CardDescription>
       </CardHeader>
       <CardContent className="pt-0 pb-8 relative z-10">
@@ -194,16 +179,13 @@ function TeamMemberCard({ member, index }: { member: TeamMember; index: number }
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
             <Avatar className="h-28 w-28 relative border-[3px] border-primary/20 group-hover:border-primary/40 transition-all duration-500 shadow-xl shadow-primary/10">
               <AvatarImage src={member.image} alt={member.name} />
-              <AvatarFallback className="text-2xl font-extrabold bg-gradient-to-br from-primary to-purple-600 text-white" style={{ fontFamily: "var(--font-poppins)" }}>
+              <AvatarFallback className="text-2xl font-extrabold bg-gradient-to-br from-primary to-purple-600 text-white font-display">
                 {member.initials}
-              </AvatarFallback>
+              </AvatarFallback> 
             </Avatar>
           </div>
         </div>
-        <CardTitle 
-          className="text-xl font-extrabold mb-2"
-          style={{ fontFamily: "var(--font-poppins)" }}
-        >
+        <CardTitle className="text-xl font-extrabold mb-2 font-display">
           {member.name}
         </CardTitle>
         <CardDescription className="text-base font-semibold">{member.role}</CardDescription>

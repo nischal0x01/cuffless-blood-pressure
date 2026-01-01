@@ -207,3 +207,47 @@
 .animate-slide-in-right {
   animation: slideInFromRight 0.6s ease-out;
 }
+
+/* Theme utility classes: TYPOGRAPHY, STATUS TOKENS, and HELPERS */
+:root {
+  --status-ok: hsl(145 47% 40%);
+  --status-warning: hsl(42 90% 55%);
+  --status-error: hsl(348 84% 58%);
+}
+
+/* Typography helpers */
+.font-display { font-family: var(--font-display); }
+.font-ui { font-family: var(--font-sans); }
+
+/* Title gradient helper */
+.title-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: gradient-x 4s linear infinite;
+}
+
+/* Status/indicator helpers */
+.status-dot { height: .75rem; width: .75rem; border-radius: 9999px; display:inline-block; }
+.status-dot.ok { background: var(--status-ok); box-shadow: 0 0 10px color-mix(in srgb, var(--status-ok) 40%, transparent); }
+.status-dot.warning { background: var(--status-warning); box-shadow: 0 0 10px color-mix(in srgb, var(--status-warning) 40%, transparent); }
+.status-dot.error { background: var(--status-error); box-shadow: 0 0 10px color-mix(in srgb, var(--status-error) 40%, transparent); }
+
+/* Chart specific indicators */
+.status-dot.ppg { background: var(--chart-1); box-shadow: 0 0 10px color-mix(in srgb, var(--chart-1) 40%, transparent); }
+.status-dot.ecg { background: var(--chart-2); box-shadow: 0 0 10px color-mix(in srgb, var(--chart-2) 40%, transparent); }
+
+/* Pill helper for connection status */
+.status-pill { display:inline-flex; align-items:center; gap:.5rem; padding:.375rem .75rem; border-radius: .625rem; font-weight: 500; }
+.status-pill.connected { background: color-mix(in srgb, var(--status-ok) 10%, transparent); color: var(--status-ok); }
+.status-pill.connecting { background: color-mix(in srgb, var(--status-warning) 10%, transparent); color: var(--status-warning); }
+.status-pill.error { background: color-mix(in srgb, var(--status-error) 10%, transparent); color: var(--status-error); }
+
+/* Text color helpers */
+.status-ok { color: var(--status-ok); }
+.status-warning { color: var(--status-warning); }
+.status-error { color: var(--status-error); }
+
+.muted-text { color: var(--color-muted-foreground); }
